@@ -10,6 +10,9 @@ export function toggleModal() {
 }
 
 export function loadStays(arr, parent) {
+  const staysNumber = document.querySelector(".stays-number");
+  staysNumber.textContent = arr.length > 12 ? "12+" : arr.length;
+
   parent.innerHTML = "";
 
   arr.forEach((stay) => {
@@ -20,6 +23,8 @@ export function loadStays(arr, parent) {
 
 export function stayTemplate({ photo, superHost, type, beds, rating, title }) {
   const isSuperHost = superHost ? "" : "hidden";
+  const isNotNull = Number.isInteger(beds) ? "" : "hidden";
+
   const template = `
     <li class="flex flex-col gap-1">
           <img
@@ -37,8 +42,8 @@ export function stayTemplate({ photo, superHost, type, beds, rating, title }) {
               </p>
               <div class="flex items-center gap-1 sm:text-sm">
                 <p>${type}</p>
-                <p>-</p>
-                <p>${beds} beds</p>
+                <p class="${isNotNull}">-</p>
+                <p class="${isNotNull}">${beds} beds</p>
               </div>
             </div>
 
