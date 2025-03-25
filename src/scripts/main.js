@@ -1,5 +1,10 @@
 import { stays } from "./stays.js";
-import { loadLocationsOptions, loadStays, toggleModal } from "./utils.js";
+import {
+  handleClickLocation,
+  loadLocationsOptions,
+  loadStays,
+  toggleModal,
+} from "./utils.js";
 /**
  * Aquí estará la lógica principal de la aplicación.
  * Este bloque de código contiene la funcionalidad principal
@@ -14,8 +19,14 @@ const optionLocationsContainer = document.querySelector(".option-locations");
 
 closeBtn.addEventListener("click", toggleModal);
 searchMenu.addEventListener("click", toggleModal);
-locationInput.addEventListener("input", () =>
-  loadLocationsOptions(stays, locationInput, optionLocationsContainer)
-);
+locationInput.addEventListener("input", () => {
+  loadLocationsOptions(stays, locationInput, optionLocationsContainer);
 
+  const optionsList = document.querySelectorAll(".option-locations li");
+  optionsList.forEach((item) =>
+    item.addEventListener("click", (e) =>
+      handleClickLocation(e, locationInput, optionLocationsContainer)
+    )
+  );
+});
 loadStays(stays, staysContainer);

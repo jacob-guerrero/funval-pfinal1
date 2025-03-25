@@ -57,7 +57,7 @@
     <!-- VOLVER HIDDEN AL MODAL -->
     <div
       id="modal"
-      class="modal w-full h-full fixed top-0 md:p-5 bg-gray-600/50"
+      class="modal w-full h-full fixed top-0 md:p-5 bg-gray-600/50 hidden"
     >
       <div
         class="modal-content w-full h-4/5 p-4 relative flex flex-col gap-4 bg-white"
@@ -79,6 +79,7 @@
                 id="location"
                 name="location"
                 placeholder="Add location"
+                class="px-1"
                 required
               />
             </div>
@@ -89,6 +90,7 @@
                 id="guest"
                 name="guest"
                 placeholder="Add guests"
+                class="px-1"
                 disabled
                 required
               />
@@ -97,7 +99,7 @@
         </form>
 
         <div class="options">
-          <ul class="option-locations flex flex-col py-2 px-4 gap-2"></ul>
+          <ul class="option-locations flex flex-col py-2 px-4 gap-2 hidden"></ul>
 
           <ul class="option-guests flex flex-col py-2 px-4 gap-6 hidden">
             <li class="flex flex-col">
@@ -139,6 +141,7 @@
         </div>
 
         <button
+          id="search-btn"
           type="submit"
           form="contactForm"
           class="w-max mt-auto py-2 px-4 self-center flex gap-2 bg-[#eb5757] rounded-xl text-white hover:cursor-pointer"

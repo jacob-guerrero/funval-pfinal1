@@ -397,14 +397,26 @@
   .bg-white {
     background-color: var(--color-white);
   }
+  .fill-\[\#010101\] {
+    fill: #010101;
+  }
+  .fill-\[010101\] {
+    fill: 010101;
+  }
   .fill-amber-300 {
     fill: var(--color-amber-300);
+  }
+  .p-1 {
+    padding: calc(var(--spacing) * 1);
   }
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
   .p-4 {
     padding: calc(var(--spacing) * 4);
+  }
+  .px-1 {
+    padding-inline: calc(var(--spacing) * 1);
   }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
@@ -480,6 +492,41 @@
     &:hover {
       @media (hover: hover) {
         cursor: pointer;
+      }
+    }
+  }
+  .hover\:bg-\[\#eb5757\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #eb5757;
+      }
+    }
+  }
+  .hover\:fill-\[\#010101\] {
+    &:hover {
+      @media (hover: hover) {
+        fill: #010101;
+      }
+    }
+  }
+  .hover\:fill-\[\#010101eb5757\] {
+    &:hover {
+      @media (hover: hover) {
+        fill: #010101eb5757;
+      }
+    }
+  }
+  .hover\:fill-\[\#eb5757\] {
+    &:hover {
+      @media (hover: hover) {
+        fill: #eb5757;
+      }
+    }
+  }
+  .hover\:fill-\[eb5757\] {
+    &:hover {
+      @media (hover: hover) {
+        fill: eb5757;
       }
     }
   }

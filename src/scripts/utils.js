@@ -6,7 +6,9 @@
 
 export function toggleModal() {
   const modal = document.querySelector("#modal");
+  const optionLocations = document.querySelector(".option-locations");
   modal.classList.toggle("hidden");
+  optionLocations.classList.toggle("hidden");
 }
 
 export function loadStays(arr, parent) {
@@ -62,7 +64,7 @@ export function stayTemplate({ photo, superHost, type, beds, rating, title }) {
 export function filterLocationInput(arr, inputText) {
   const filteredOpts = arr.filter(({ city }) => {
     const cityLower = city.toLowerCase();
-    const inputLower = inputText.value.toLowerCase();
+    const inputLower = inputText.toLowerCase();
     return cityLower.includes(inputLower);
   });
   return filteredOpts;
@@ -81,14 +83,21 @@ export function locationOptionTemplate({ city, country }) {
   return template;
 }
 export function loadLocationsOptions(arr, inputText, parent) {
-  if (!inputText.value) {
+  const textValue = inputText.value.trim();
+  if (!textValue || textValue === "") {
     parent.innerHTML = "";
     return;
   }
   parent.innerHTML = "";
-  const filteredLocations = filterLocationInput(arr, inputText);
-  filteredLocations.forEach((location) => {
-    const locationOptionItem = locationOptionTemplate(location);
+  const filteredLocations = filterLocationInput(arr, textValue);
+  filteredLocations.forEach((locationOption) => {
+    const locationOptionItem = locationOptionTemplate(locationOption);
     parent.innerHTML += locationOptionItem;
   });
+}
+
+export function handleClickLocation(e, locationInput, parent) {
+  const textValue = e.target.textContent;
+  locationInput.value = textValue;
+  parent.innerHTML = "";
 }
