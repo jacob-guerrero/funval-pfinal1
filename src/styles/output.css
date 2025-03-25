@@ -383,12 +383,6 @@
   .bg-white {
     background-color: var(--color-white);
   }
-  .fill-\[\#010101\] {
-    fill: #010101;
-  }
-  .fill-\[010101\] {
-    fill: 010101;
-  }
   .fill-amber-300 {
     fill: var(--color-amber-300);
   }
@@ -455,41 +449,6 @@
     &:hover {
       @media (hover: hover) {
         cursor: pointer;
-      }
-    }
-  }
-  .hover\:bg-\[\#eb5757\] {
-    &:hover {
-      @media (hover: hover) {
-        background-color: #eb5757;
-      }
-    }
-  }
-  .hover\:fill-\[\#010101\] {
-    &:hover {
-      @media (hover: hover) {
-        fill: #010101;
-      }
-    }
-  }
-  .hover\:fill-\[\#010101eb5757\] {
-    &:hover {
-      @media (hover: hover) {
-        fill: #010101eb5757;
-      }
-    }
-  }
-  .hover\:fill-\[\#eb5757\] {
-    &:hover {
-      @media (hover: hover) {
-        fill: #eb5757;
-      }
-    }
-  }
-  .hover\:fill-\[eb5757\] {
-    &:hover {
-      @media (hover: hover) {
-        fill: eb5757;
       }
     }
   }
