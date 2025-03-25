@@ -51,111 +51,13 @@
       <ul
         id="stays-container"
         class="w-full max-w-5xl grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] justify-items-center gap-4"
-      >
-        <li class="flex flex-col gap-1">
-          <img
-            src="https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1275&q=80"
-            alt="stay"
-            class="aspect-[4/3] rounded-2xl"
-          />
-
-          <div class="flex justify-between items-center text-gray-500">
-            <div class="flex gap-1 text-xs sm:gap-3 sm:text-sm">
-              <p
-                class="py-1 px-2 text-[10px] flex justify-center items-center border-1 border-gray-800 rounded-xl font-semibold text-gray-800 sm:text-xs"
-              >
-                SUPERHOST
-              </p>
-              <div class="flex items-center gap-1 sm:text-sm">
-                <p>Entire apartment</p>
-                <p>-</p>
-                <p>2 beds</p>
-              </div>
-            </div>
-
-            <div class="flex gap-1 items-center text-sm">
-              <img src="./src/images/icons/star.svg" alt="star" class="w-6" />
-              <p>4.4</p>
-            </div>
-          </div>
-
-          <p class="font-semibold">Nice 2 room apartment close to everything</p>
-        </li>
-
-        <li class="flex flex-col gap-1">
-          <img
-            src="https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1275&q=80"
-            alt="stay"
-            class="aspect-[4/3] rounded-2xl"
-          />
-
-          <div class="flex justify-between text-gray-500">
-            <div class="flex gap-1">
-              <p>Entire apartment</p>
-              <p>-</p>
-              <p>2 beds</p>
-            </div>
-
-            <div class="flex gap-1 items-center">
-              <img src="./src/images/icons/star.svg" alt="star" class="w-6" />
-              <p>4.4</p>
-            </div>
-          </div>
-
-          <p class="font-semibold">Nice 2 room apartment close to everything</p>
-        </li>
-
-        <li class="flex flex-col gap-1">
-          <img
-            src="https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1275&q=80"
-            alt="stay"
-            class="aspect-[4/3] rounded-2xl"
-          />
-
-          <div class="flex justify-between text-gray-500">
-            <div class="flex gap-1">
-              <p>Entire apartment</p>
-              <p>-</p>
-              <p>2 beds</p>
-            </div>
-
-            <div class="flex gap-1 items-center">
-              <img src="./src/images/icons/star.svg" alt="star" class="w-6" />
-              <p>4.4</p>
-            </div>
-          </div>
-
-          <p class="font-semibold">Nice 2 room apartment close to everything</p>
-        </li>
-
-        <li class="flex flex-col gap-1">
-          <img
-            src="https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1275&q=80"
-            alt="stay"
-            class="aspect-[4/3] rounded-2xl"
-          />
-
-          <div class="flex justify-between text-gray-500">
-            <div class="flex gap-1">
-              <p>Entire apartment</p>
-              <p>-</p>
-              <p>2 beds</p>
-            </div>
-
-            <div class="flex gap-1 items-center">
-              <img src="./src/images/icons/star.svg" alt="star" class="w-6" />
-              <p>4.4</p>
-            </div>
-          </div>
-
-          <p class="font-semibold">Nice 2 room apartment close to everything</p>
-        </li>
-      </ul>
+      ></ul>
     </main>
 
+    <!-- VOLVER HIDDEN AL MODAL -->
     <div
       id="modal"
-      class="modal w-full h-full fixed top-0 md:p-5 bg-gray-600/50 hidden"
+      class="modal w-full h-full fixed top-0 md:p-5 bg-gray-600/50"
     >
       <div
         class="modal-content w-full h-4/5 p-4 relative flex flex-col gap-4 bg-white"
@@ -195,32 +97,7 @@
         </form>
 
         <div class="options">
-          <ul class="option-location flex flex-col py-2 px-4 gap-2 hidden">
-            <li class="w-max flex gap-1 text-gray-500 hover:cursor-pointer">
-              <img
-                src="./src/images/icons/location.svg"
-                alt="location"
-                class="w-6"
-              />
-              <p>Vaasa, Finland</p>
-            </li>
-            <li class="max-w-max flex gap-1 text-gray-500 hover:cursor-pointer">
-              <img
-                src="./src/images/icons/location.svg"
-                alt="location"
-                class="w-6"
-              />
-              <p>Vaasa, Finland</p>
-            </li>
-            <li class="max-w-max flex gap-1 text-gray-500 hover:cursor-pointer">
-              <img
-                src="./src/images/icons/location.svg"
-                alt="location"
-                class="w-6"
-              />
-              <p>Vaasa, Finland</p>
-            </li>
-          </ul>
+          <ul class="option-locations flex flex-col py-2 px-4 gap-2"></ul>
 
           <ul class="option-guests flex flex-col py-2 px-4 gap-6 hidden">
             <li class="flex flex-col">
