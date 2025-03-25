@@ -4,6 +4,7 @@ import {
   loadLocationsOptions,
   loadStays,
   toggleModal,
+  toggleOptions,
 } from "./utils.js";
 /**
  * Aquí estará la lógica principal de la aplicación.
@@ -16,6 +17,8 @@ const searchMenu = document.querySelector("#search-menu");
 const staysContainer = document.querySelector("#stays-container");
 const locationInput = document.querySelector("#location");
 const optionLocationsContainer = document.querySelector(".option-locations");
+const guestBtn = document.querySelector("#guest");
+const locationBtn = document.querySelector("#location");
 
 closeBtn.addEventListener("click", toggleModal);
 searchMenu.addEventListener("click", toggleModal);
@@ -29,4 +32,7 @@ locationInput.addEventListener("input", () => {
     )
   );
 });
+locationBtn.addEventListener("click", (e) => toggleOptions(e));
+guestBtn.addEventListener("click", (e) => toggleOptions(e));
+
 loadStays(stays, staysContainer);

@@ -11,6 +11,20 @@ export function toggleModal() {
   optionLocations.classList.toggle("hidden");
 }
 
+export function toggleOptions(e) {
+  const optionLocation = document.querySelector(".option-locations");
+  const optionGuests = document.querySelector(".option-guests");
+  
+  const btnClicked = e.target.id;
+  if (btnClicked === "location") {
+    optionLocation.classList.remove("hidden");
+    optionGuests.classList.add("hidden");
+  } else if (btnClicked === "guest") {
+    optionGuests.classList.remove("hidden");
+    optionLocation.classList.add("hidden");
+  }
+}
+
 export function loadStays(arr, parent) {
   const staysNumber = document.querySelector(".stays-number");
   staysNumber.textContent = arr.length > 12 ? "12+" : arr.length;

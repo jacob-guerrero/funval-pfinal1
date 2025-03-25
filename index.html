@@ -84,14 +84,16 @@
               />
             </div>
             <div class="py-2 px-4 flex flex-col">
-              <label for="guest" class="font-semibold">GUESTS</label>
+              <label for="guest" class="font-semibold hover:cursor-pointer"
+                >GUESTS</label
+              >
               <input
                 type="text"
                 id="guest"
                 name="guest"
                 placeholder="Add guests"
-                class="px-1"
-                disabled
+                class="px-1 focus:outline-none hover:cursor-pointer"
+                readonly
                 required
               />
             </div>
@@ -99,7 +101,9 @@
         </form>
 
         <div class="options">
-          <ul class="option-locations flex flex-col py-2 px-4 gap-2 hidden"></ul>
+          <ul
+            class="option-locations flex flex-col py-2 px-4 gap-2 hidden"
+          ></ul>
 
           <ul class="option-guests flex flex-col py-2 px-4 gap-6 hidden">
             <li class="flex flex-col">
