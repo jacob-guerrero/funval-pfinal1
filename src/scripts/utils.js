@@ -14,7 +14,7 @@ export function toggleModal() {
 export function toggleOptions(e) {
   const optionLocation = document.querySelector(".option-locations");
   const optionGuests = document.querySelector(".option-guests");
-  
+
   const btnClicked = e.target.id;
   if (btnClicked === "location") {
     optionLocation.classList.remove("hidden");
@@ -114,4 +114,31 @@ export function handleClickLocation(e, locationInput, parent) {
   const textValue = e.target.textContent;
   locationInput.value = textValue;
   parent.innerHTML = "";
+}
+
+let countAdult = 0;
+let countChildren = 0;
+export function handleClickBtns(e) {
+  const btnClicked = e.target.id;
+  switch (btnClicked) {
+    case "decAdultBtn":
+      countAdult--;
+      break;
+
+    case "incAdultBtn":
+      countAdult++;
+      break;
+
+    case "decChildrenBtn":
+      countChildren--;
+      break;
+
+    case "incChildrenBtn":
+      countChildren++;
+      break;
+
+    default:
+      break;
+  }
+  console.log(countAdult, countChildren);
 }

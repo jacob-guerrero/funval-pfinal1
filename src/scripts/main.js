@@ -1,5 +1,6 @@
 import { stays } from "./stays.js";
 import {
+  handleClickBtns,
   handleClickLocation,
   loadLocationsOptions,
   loadStays,
@@ -19,6 +20,10 @@ const locationInput = document.querySelector("#location");
 const optionLocationsContainer = document.querySelector(".option-locations");
 const guestBtn = document.querySelector("#guest");
 const locationBtn = document.querySelector("#location");
+const decAdultBtn = document.querySelector("#decAdultBtn");
+const incAdultBtn = document.querySelector("#incAdultBtn");
+const decChildrenBtn = document.querySelector("#decChildrenBtn");
+const incChildrenBtn = document.querySelector("#incChildrenBtn");
 
 closeBtn.addEventListener("click", toggleModal);
 searchMenu.addEventListener("click", toggleModal);
@@ -34,5 +39,10 @@ locationInput.addEventListener("input", () => {
 });
 locationBtn.addEventListener("click", (e) => toggleOptions(e));
 guestBtn.addEventListener("click", (e) => toggleOptions(e));
+
+decAdultBtn.addEventListener("click", (e) => handleClickBtns(e));
+incAdultBtn.addEventListener("click", (e) => handleClickBtns(e));
+decChildrenBtn.addEventListener("click", (e) => handleClickBtns(e));
+incChildrenBtn.addEventListener("click", (e) => handleClickBtns(e));
 
 loadStays(stays, staysContainer);
