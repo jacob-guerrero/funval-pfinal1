@@ -173,16 +173,45 @@ export function submitForm(e, stays, staysContainer) {
 
   const filteredArr = filterResults(stays, locationValue, guestValue);
   loadStays(filteredArr, staysContainer);
+  changeMenuValues();
   toggleModal();
 }
 
 export function filterResults(arr, locationValue, guestValue) {
-  let filteredResult = arr.filter((item) => item.city === locationValue);
-  if (guestValue) {
-    filteredResult = filteredResult.filter(
-      (item) => item.maxGuests >= guestValue
-    );
+  if (!locationValue && !guestValue) {
+    return arr;
+  }
+
+  let filteredResult = [];
+  if (locationValue) {
+    filteredResult = arr.filter((item) => item.city === locationValue);
+    if (guestValue) {
+      filteredResult = filteredResult.filter(
+        (item) => item.maxGuests >= guestValue
+      );
+    }
+  } else if (guestValue) {
+    filteredResult = arr.filter((item) => item.maxGuests >= guestValue);
   }
 
   return filteredResult;
+}
+
+export function changeMenuValues() {
+  const locationText = document.querySelector("#location");
+  const guestCount = document.querySelector("#guest");
+  const searchLocationBtn = document.querySelector("#search-location-btn");
+  const searchGuestBtn = document.querySelector("#search-guest-btn");
+  const staysTitle = document.querySelector("#stays-title");
+
+  // Search for values and change search menu btns content
+  searchLocationBtn.textContent =
+    locationText.value === "" ? locationText.placeholder : locationText.value;
+  searchGuestBtn.textContent =
+    countAdult + countChildren === 0
+      ? guestCount.placeholder
+      : guestCount.value;
+
+  const staysCountry = locationText.value.split(", ")[1];
+  staysTitle.textContent = staysCountry ? `Stays in ${staysCountry}` : "Stays";
 }
