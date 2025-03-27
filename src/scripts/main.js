@@ -4,6 +4,7 @@ import {
   handleClickLocation,
   loadLocationsOptions,
   loadStays,
+  submitForm,
   toggleModal,
   toggleOptions,
 } from "./utils.js";
@@ -24,6 +25,7 @@ const decAdultBtn = document.querySelector("#decAdultBtn");
 const incAdultBtn = document.querySelector("#incAdultBtn");
 const decChildrenBtn = document.querySelector("#decChildrenBtn");
 const incChildrenBtn = document.querySelector("#incChildrenBtn");
+const contactForm = document.querySelector("#contactForm");
 
 closeBtn.addEventListener("click", toggleModal);
 searchMenu.addEventListener("click", toggleModal);
@@ -44,5 +46,7 @@ decAdultBtn.addEventListener("click", (e) => handleClickBtns(e));
 incAdultBtn.addEventListener("click", (e) => handleClickBtns(e));
 decChildrenBtn.addEventListener("click", (e) => handleClickBtns(e));
 incChildrenBtn.addEventListener("click", (e) => handleClickBtns(e));
+
+contactForm.addEventListener("submit", (e) => submitForm(e, stays));
 
 loadStays(stays, staysContainer);

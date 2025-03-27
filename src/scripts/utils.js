@@ -162,3 +162,26 @@ export function displayCount(countAdult, countChildren) {
   }
   guestCount.value = `${countAdult + countChildren} guests`;
 }
+
+export function submitForm(e, stays) {
+  e.preventDefault();
+  const contactForm = document.querySelector("#contactForm");
+
+  const formData = new FormData(contactForm);
+  const locationValue = formData.get("location").split(",")[0];
+  const guestValue = +formData.get("guest").split(" ")[0];
+
+  const filteredArr = filterResults(stays, locationValue, guestValue);
+  console.log(locationValue, guestValue, filteredArr);
+}
+
+export function filterResults(arr, locationValue, guestValue) {
+  let filteredResult = arr.filter((item) => item.city === locationValue);
+  if (guestValue) {
+    filteredResult = filteredResult.filter(
+      (item) => item.maxGuests >= guestValue
+    );
+  }
+  console.log(filteredResult);
+  return filteredResult;
+}
