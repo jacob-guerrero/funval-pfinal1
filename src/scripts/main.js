@@ -47,6 +47,8 @@ incAdultBtn.addEventListener("click", (e) => handleClickBtns(e));
 decChildrenBtn.addEventListener("click", (e) => handleClickBtns(e));
 incChildrenBtn.addEventListener("click", (e) => handleClickBtns(e));
 
-contactForm.addEventListener("submit", (e) => submitForm(e, stays));
+contactForm.addEventListener("submit", (e) =>
+  submitForm(e, stays, staysContainer)
+);
 
 loadStays(stays, staysContainer);

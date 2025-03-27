@@ -163,7 +163,7 @@ export function displayCount(countAdult, countChildren) {
   guestCount.value = `${countAdult + countChildren} guests`;
 }
 
-export function submitForm(e, stays) {
+export function submitForm(e, stays, staysContainer) {
   e.preventDefault();
   const contactForm = document.querySelector("#contactForm");
 
@@ -172,7 +172,8 @@ export function submitForm(e, stays) {
   const guestValue = +formData.get("guest").split(" ")[0];
 
   const filteredArr = filterResults(stays, locationValue, guestValue);
-  console.log(locationValue, guestValue, filteredArr);
+  loadStays(filteredArr, staysContainer);
+  toggleModal();
 }
 
 export function filterResults(arr, locationValue, guestValue) {
@@ -182,6 +183,6 @@ export function filterResults(arr, locationValue, guestValue) {
       (item) => item.maxGuests >= guestValue
     );
   }
-  console.log(filteredResult);
+
   return filteredResult;
 }
