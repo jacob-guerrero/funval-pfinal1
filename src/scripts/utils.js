@@ -120,6 +120,11 @@ let countAdult = 0;
 let countChildren = 0;
 export function handleClickBtns(e) {
   const btnClicked = e.target.id;
+
+  // Validate negative numbers
+  if (btnClicked === "decAdultBtn" && countAdult === 0) return;
+  if (btnClicked === "decChildrenBtn" && countChildren === 0) return;
+
   switch (btnClicked) {
     case "decAdultBtn":
       countAdult--;
@@ -140,5 +145,20 @@ export function handleClickBtns(e) {
     default:
       break;
   }
-  console.log(countAdult, countChildren);
+
+  displayCount(countAdult, countChildren);
+}
+export function displayCount(countAdult, countChildren) {
+  const adultCount = document.querySelector("#adultCount");
+  const childrenCount = document.querySelector("#childrenCount");
+  const guestCount = document.querySelector("#guest");
+
+  adultCount.textContent = countAdult;
+  childrenCount.textContent = countChildren;
+
+  if (countAdult + countChildren === 0) {
+    guestCount.value = "";
+    return;
+  }
+  guestCount.value = `${countAdult + countChildren} guests`;
 }
