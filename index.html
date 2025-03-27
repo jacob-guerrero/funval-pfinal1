@@ -61,10 +61,10 @@
     <!-- Modal -->
     <div
       id="modal"
-      class="modal w-full h-full fixed top-0 md:p-5 bg-gray-600/50 hidden"
+      class="modal w-full h-full fixed flex justify-center top-0 md:p-5 bg-gray-600/50"
     >
       <div
-        class="modal-content w-full h-4/5 p-4 relative flex flex-col gap-4 bg-white"
+        class="modal-content w-full h-4/5 max-w-5xl p-4 relative flex flex-col gap-4 bg-white md:rounded-lg"
       >
         <div class="flex justify-between font-semibold">
           <p>Edit your search</p>
@@ -74,9 +74,9 @@
         </div>
         <form id="contactForm">
           <div
-            class="flex flex-col border-1 border-gray-300 rounded-2xl shadow-[0px_4px_14px_2px_rgba(0,0,0,0.08)] divide-y-1 divide-gray-300"
+            class="flex flex-col border-1 border-gray-300 rounded-2xl shadow-[0px_4px_14px_2px_rgba(0,0,0,0.08)] divide-y-1 divide-gray-300 lg:flex-row lg:divide-x-1 lg:divide-y-0 lg:justify-between"
           >
-            <div class="py-2 px-4 flex flex-col">
+            <div class="py-2 px-4 flex flex-col lg:flex-1">
               <label for="location" class="font-semibold">LOCATION</label>
               <input
                 type="search"
@@ -86,7 +86,7 @@
                 class="px-1"
               />
             </div>
-            <div class="py-2 px-4 flex flex-col">
+            <div class="py-2 px-4 flex flex-col lg:flex-1 border-b-0">
               <label for="guest" class="font-semibold hover:cursor-pointer"
                 >GUESTS</label
               >
@@ -99,15 +99,35 @@
                 readonly
               />
             </div>
+
+            <div
+              class="py-2 px-4 justify-center items-center hidden lg:flex lg:flex-1"
+            >
+              <button
+                id="search-btn"
+                type="submit"
+                form="contactForm"
+                class="w-max py-2 px-4 flex gap-2 bg-[#eb5757] rounded-xl text-white hover:cursor-pointer"
+              >
+                <img
+                  src="./src/images/icons/search-white.svg"
+                  alt="search"
+                  class="w-6"
+                />
+                <p>Search</p>
+              </button>
+            </div>
           </div>
         </form>
 
-        <div class="options">
+        <div class="options lg:flex">
           <ul
             class="option-locations flex flex-col py-2 px-4 gap-2 hidden"
           ></ul>
 
-          <ul class="option-guests flex flex-col py-2 px-4 gap-6 hidden">
+          <ul
+            class="option-guests mx-[calc(100%/3)] flex flex-col py-2 px-4 gap-6 hidden"
+          >
             <li class="flex flex-col">
               <h3 class="font-semibold">Adults</h3>
               <p class="text-gray-500">Ages 13 or above</p>
@@ -154,7 +174,7 @@
           id="search-btn"
           type="submit"
           form="contactForm"
-          class="w-max mt-auto py-2 px-4 self-center flex gap-2 bg-[#eb5757] rounded-xl text-white hover:cursor-pointer"
+          class="w-max mt-auto py-2 px-4 self-center flex gap-2 bg-[#eb5757] rounded-xl text-white hover:cursor-pointer lg:hidden"
         >
           <img
             src="./src/images/icons/search-white.svg"
