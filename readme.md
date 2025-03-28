@@ -2,6 +2,23 @@
 
 Este repositorio es una plantilla diseñada para ayudarte a comenzar rápidamente. Sigue estos pasos para configurar tu entorno y empezar a trabajar:
 
+## Contenido Extra:
+- Actualizar el título principal con el nombre del país extraído del input.
+
+### Codigo:
+```js
+    const staysTitle = document.querySelector("#stays-title");
+    const staysCountry = locationText.value.split(", ")[1];
+    staysTitle.textContent = staysCountry ? `Stays in ${staysCountry}` : "Stays";
+```
+
+### Explicación:
+1. Se obtiene el elemento con el id `#stays-title` y se guarda en la variable `staysTitle`.
+2. Se obtiene el valor del input con el id `locationText`, este input tiene el formato "ciudad, país".
+3. El valor de `staysCountry` se asigna a la segunda parte del array (el país), usando `locationText.value.split(", ")[1]`.
+4. El contenido de `staysTitle` se actualiza con el nombre del país extraído.
+
+
 ## 1. Usa esta plantilla
 Haz clic en el botón **"Use this template"** en la parte superior derecha de este repositorio para crear un nuevo proyecto basado en esta plantilla. 📂
 
